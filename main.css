@@ -1,0 +1,167 @@
+#app {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .players{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .player {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 40px;
+    align-items: center;
+  }
+
+  .player:last-child {
+    margin-right: 0;
+  }
+  
+  .player__name {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .player__healthbar {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    border: 2px solid black;
+  }
+
+  .player__healthbar-active {
+    max-width: 100%;
+    height: 100%;
+    background-color: green;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+  }
+
+  .player__healthbar-counter {
+    position: absolute;
+    color: black;
+    top: 120%;
+    margin: 0;
+  }
+
+  .controls {
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  .controls__buttons {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button {
+    /* temp */
+    padding: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border: none;
+    transition: .7s;
+    cursor: pointer;
+    border: 3px solid transparent;
+    margin: 0 auto;
+  }
+
+  .button:last-child {
+    margin-bottom: 0;
+  }
+
+  .button:hover {
+    border-color: black;
+  }
+
+  .start-button {
+    /* display: none; */
+    background-color: lightgreen;
+  }
+
+  .start-button:hover {
+    background-color: lightblue;
+
+  }
+
+  .attack-button {
+    background-color: lightcoral;
+  }
+
+  .attack-button:hover {
+    background-color: red;
+  }
+
+  .special-attack-button {
+    background-color: lightsalmon;
+  }
+
+  .special-attack-button:hover {
+    background-color: orange;
+  }
+
+  .heal-button {
+    background-color: lightgreen;    
+  }
+
+  .give-up-button {
+    background-color: lightgray;
+  }
+
+  .actions-info {
+    display: flex;
+    margin-top: 40px;
+    /* height: 370px; */
+    /* temp */
+    /* max-height: 370px; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 30px 50px;
+  }
+
+  .actions-info__list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .actions-info__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(73,187,247,0.2);
+    margin-bottom: 10px;
+  }
+
+  .actions-info__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .actions-info__item--player {
+    background-color: rgba(73,187,247,0.2);
+  }
+
+  .actions-info__item--monster {
+    background-color: rgba(226,106,106,0.2);
+  }

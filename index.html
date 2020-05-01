@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight or Die (Vue.js based game)</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="players">
+            <div class="player">
+                <h1 class="player__name">You</h1>
+                <div class="player__healthbar">
+                    <div class="player__healthbar-active" :style="{width: monsterHealth + '%'}">
+                        <h2 class="player__healthbar-counter">{{playerHealth}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <h1 class="player__name">Monster</h1>
+                <div class="player__healthbar">
+                    <div class="player__healthbar-active" :style="{width: monsterHealth + '%'}">
+                        <h2 class="player__healthbar-counter">{{monsterHealth}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button v-show="hideButtons" @click="startGame" class="button start-button">Start New
+                Game</button>
+            <div v-show="hideButtons === false" class="controls__buttons controls-buttons">
+                <button @click="attack" class="button attack-button">Attack</button>
+                <button @click="specialAttack" class="button special-attack-button">Special attack</button>
+                <button @click="heal" class="button heal-button">Heal</button>
+                <button @click="reset" class="button give-up-button">Give up</button>
+            </div>
+        </div>
+        <div class="actions-info" v-if="actionsList.length > 0">
+            <ul class="actions-info__list">
+                <li class="actions-info__item"
+                v-for="item in actionsList"
+                :class="[item.isPlayer === true? 'actions-info__item--player': 'actions-info__item--monster']">
+                    {{ item.message }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
